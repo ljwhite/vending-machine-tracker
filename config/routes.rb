@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "owners#index"
 
-  resources :owners do
-    resources :machines, only: [:index]
-  end
+  get "/machines/:id", to: 'machines#show'
 
-  resources :machines, only: [:show]
+  get "/snacks/:id", to: 'snacks#show'
+
+  get "/owners", to: 'owners#index'
 end

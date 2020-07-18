@@ -5,7 +5,7 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
     owner = Owner.create(name: "Sam's Snacks")
     dons  = owner.machines.create(location: "Don's Mixed Drinks")
 
-    visit machine_path(dons)
+    visit "/machines/#{dons.id}"
 
     expect(page).to have_content("Don's Mixed Drinks Vending Machine")
   end
